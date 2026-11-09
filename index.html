@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f0e7" />
+  <meta name="description" content="Zaina Khalil — language, learning, AI, and the places in between." />
+  <title>Zaina Khalil — Field Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Zaina Khalil home">ZK<span>✳</span></a>
+    <span class="top-note">FIELD NOTES / 01</span>
+    <nav aria-label="Main navigation">
+      <a href="#atlas">The atlas</a>
+      <a href="#work">Things I make</a>
+      <a href="#about">Off the clock</a>
+    </nav>
+    <a class="contact-link" href="mailto:zainakhalil002@gmail.com">Say hello <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-kicker"><span class="live-dot"></span> MCS @ UIUC · CURRENTLY ASKING QUESTIONS</div>
+      <h1>I grew up in a sentence<br />that changed <em>languages</em><span class="period">.</span></h1>
+      <div class="hero-bottom">
+      <p class="hero-copy">My grandparents’ stories in Cairo wandered between Arabic and English. Now I’m interested in how people learn across languages, subjects, and contexts—and what AI can do to help.</p>
+        <div class="hero-side"><span class="scribble">اهلاً / hola / hi</span><span class="side-caption">language × learning × AI</span></div>
+      </div>
+      <div class="hero-stamp" aria-hidden="true">CAIRO<br />CHICAGO<br />UIUC<span>✳</span></div>
+    </section>
+
+    <section class="atlas-section" id="atlas">
+      <div class="section-heading">
+        <div><span class="eyebrow">01 — A LIFE IN PLACE NAMES</span><h2>A little bit <em>here,</em><br />a little bit <em>there.</em></h2></div>
+        <p>Family roots, school years, fieldwork, and stamps in the passport. Tap a pin; I’ll tell you why it’s here.</p>
+      </div>
+      <div class="atlas-shell">
+        <aside class="atlas-rail">
+          <div class="rail-top"><span class="eyebrow">THE PERSONAL ATLAS</span><span class="pin-count"><b id="visible-count">19</b> places</span></div>
+          <div class="filter-row" role="group" aria-label="Filter places">
+            <button class="filter active" data-filter="all">All places <span>19</span></button>
+            <button class="filter" data-filter="home">Home bases <span>3</span></button>
+            <button class="filter" data-filter="trip">Out exploring <span>16</span></button>
+          </div>
+          <div class="place-list" id="place-list" aria-label="Places"></div>
+          <div class="route-note"><span class="route-icon">↗</span><span><b>Current coordinates</b><br />Urbana-Champaign, Illinois</span></div>
+        </aside>
+        <div class="map-wrap">
+          <div class="map-label map-label-top">10°–60° N <span> / </span> 130° W–40° E</div>
+          <div id="map" role="application" aria-label="Interactive map of Zaina's home bases and travels">
+            <svg id="map-svg" viewBox="0 0 1000 560" aria-label="Illustrated map with interactive location pins">
+              <title>Zaina’s personal atlas</title>
+              <g id="map-world">
+                <rect class="ocean" x="0" y="0" width="1000" height="560" />
+                <g class="graticule">
+                  <path d="M59 0V560 M235 0V560 M412 0V560 M588 0V560 M765 0V560 M941 0V560" />
+                  <path d="M0 102H1000 M0 204H1000 M0 306H1000 M0 408H1000 M0 510H1000" />
+                </g>
+                <g class="landmass">
+                  <path d="M0 0H388L363 27 341 35 331 49 304 54 296 68 274 67 262 84 242 87 239 105 221 111 215 128 199 131 196 148 178 151 173 169 155 175 151 193 132 199 127 221 110 231 106 249 89 254 88 275 70 287 67 311 80 326 91 348 110 363 122 381 143 394 155 416 179 430 194 452 214 471 232 496 252 509 265 530 251 548 237 560H0Z" />
+                  <path d="M218 300 239 307 251 323 268 330 279 350 296 361 310 383 326 396 338 420 355 439 366 464 383 488 391 515 409 540 424 560H315L309 542 295 525 292 505 276 490 270 467 256 449 250 427 236 409 230 384 219 366 218 342 206 324Z" />
+                  <path d="M567 0H1000V66L976 75 965 94 945 100 936 117 913 126 900 145 878 152 865 169 841 174 827 191 807 195 794 212 771 216 758 234 737 240 727 256 708 261 697 278 676 284 664 300 646 305 635 322 616 329 607 347 590 354 576 372 559 377 546 394 526 399 514 418 491 424 478 442 461 446 449 462 433 468 421 486 403 488 389 505 371 507 365 526 351 540 341 560H466L473 541 489 525 497 503 513 487 522 463 539 449 548 428 562 414 575 394 592 380 600 359 619 346 626 326 644 313 651 292 671 282 677 263 696 251 701 232 720 222 726 201 745 193 751 174 771 166 780 148 800 142 808 123 830 116 839 96 859 87 868 67 891 58 901 38 922 30 933 12 953 0Z" />
+                  <path d="M805 208 829 204 842 213 851 226 847 243 832 253 820 248 812 231Z" />
+                  <path d="M0 0H1000V-1H0Z" />
+                </g>
+                <g class="map-route" aria-hidden="true"><path d="M947 305 Q605 96 250 184 Q248 194 246 202" /></g>
+                <g id="map-pins"></g>
+              </g>
+            </svg>
+            <div class="map-callout" id="map-callout" aria-live="polite"><span class="callout-kicker">PICK A PIN</span><b>Places, in passing</b><small>Tap a dot or a place name to zoom in.</small></div>
+            <div class="map-controls"><button type="button" id="zoom-in" aria-label="Zoom in">+</button><button type="button" id="zoom-out" aria-label="Zoom out">−</button></div>
+          </div>
+          <div class="map-legend"><span><i class="legend-dot home-dot"></i> home bases</span><span><i class="legend-dot trip-dot"></i> explored</span></div>
+          <button class="map-reset" id="map-reset" type="button" aria-label="Show all places">↗ <span>show all</span></button>
+          <div class="map-caption">A VERY UNOFFICIAL MAP OF GETTING AROUND</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="now-section">
+      <div class="now-aside"><span class="eyebrow">02 — RIGHT NOW</span><div class="sun-doodle" aria-hidden="true">✳</div></div>
+      <div class="now-copy"><h2>Researching the space<br />between <em>“helpful”</em> and <em>“I can do it.”</em></h2>
+        <p>I’m studying for my Master of Computer Science in Data Science at UIUC and exploring how learners with different language backgrounds and prior experiences learn introductory programming with AI.</p>
+        <p>I’m also reviewing AI-generated translations of programming examples for a planned bilingual classroom study. Small details—like diacritics or the direction numbers appear—can change how a lesson reads. I’m interested in learning across languages and contexts, not only one language pair.</p>
+        <div class="tag-line"><span>multilingual learning</span><span>human-computer interaction</span><span>applied AI</span></div>
+      </div>
+    </section>
+
+    <section class="work-section" id="work">
+      <div class="section-heading work-heading">
+        <div><span class="eyebrow">03 — THINGS I’VE MADE / HELPED MAKE</span><h2>Curiosity, with<br /><em>deliverables.</em></h2></div>
+        <span class="asterisk" aria-hidden="true">✳</span>
+      </div>
+      <div class="work-grid">
+        <article class="work-card card-blue">
+          <div class="card-top"><span>01 / AI + SPACE</span><span class="card-emoji">🚀</span></div>
+          <h3>Brickonaut</h3><p class="card-sub">NASA Space Apps · 1st place · 2025</p>
+          <p>608 space biology papers, turned into three AI dashboards for scientists, mission planners, and investors. Search, summaries, and a chat assistant included.</p>
+          <div class="card-foot"><span>Python · Flask · Azure OpenAI</span><a href="https://github.com/Zona-n/NASA-SPACE-APPS" target="_blank" rel="noreferrer">project ↗</a></div>
+        </article>
+        <article class="work-card card-peach">
+          <div class="card-top"><span>02 / AI + LANGUAGE</span><span class="card-emoji">💬</span></div>
+          <h3>Sentiment, surfaced</h3><p class="card-sub">Google Sprinternship · 2025</p>
+          <p>A Gemini-powered chatbot that made 10,000+ customer sentiment entries easier for consultants to explore—in a three-week sprint.</p>
+          <div class="card-foot"><span>Gemini · Google Cloud · NLP</span><span>10k+ entries</span></div>
+        </article>
+        <article class="work-card card-lime">
+          <div class="card-top"><span>03 / DATA + QUALITY</span><span class="card-emoji">🧹</span></div>
+          <h3>Datatidy</h3><p class="card-sub">Purdue Data Mine × Dormakaba · 2024–25</p>
+          <p>Made 50,000+ international hotel access records more consistent, reducing null values by 40% for downstream analysis.</p>
+          <div class="card-foot"><span>data standards · modeling</span><span>−40% nulls</span></div>
+        </article>
+        <article class="work-card card-lilac">
+          <div class="card-top"><span>04 / IMAGES + PATTERNS</span><span class="card-emoji">🛰️</span></div>
+          <h3>Ice or vessel?</h3><p class="card-sub">Ursa Space Systems · 2025</p>
+          <p>Classified ships and icebergs in synthetic aperture radar images at 80%+ accuracy, then explored what pretrained embeddings captured.</p>
+          <div class="card-foot"><span>Keras · CNN · PCA</span><span>80%+ accuracy</span></div>
+        </article>
+      </div>
+      <details class="more-work"><summary>There’s more where that came from <span>＋</span></summary>
+        <div class="more-grid">
+          <p><b>BankTrack · UChicago DSI</b><br />Fine-tuned quantized Llama 3 to summarize SEC 8-K filings, cutting review time by 60%.</p>
+          <p><b>Everyday 2.0 · SparkHacks</b><br />First-place, 24-hour iOS app for campus water refill stations, built with Swift and MapKit.</p>
+          <p><b>Pharma intelligence · AbbVie × UIC</b><br />Built the source-validation and credibility-scoring agent in a seven-agent pipeline.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="margin-notes" id="about">
+      <div class="margin-title"><span class="eyebrow">04 — MARGIN NOTES</span><h2>Not all my tabs<br />are <em>open in a lab.</em></h2></div>
+      <div class="notes-grid">
+        <div class="note"><span class="note-icon">🏊🏽‍♀️</span><p>Ten years of competitive swimming taught me hard things happen one lap at a time.</p></div>
+        <div class="note"><span class="note-icon">🧠</span><p>I lift, and then read about how exercise affects the brain. The cognitive science never really switches off.</p></div>
+        <div class="note"><span class="note-icon">🧳</span><p>Usually planning the next trip. Occasionally rearranging my room instead.</p></div>
+      </div>
+      <div class="teaching-note"><span>✎ &nbsp; TEACHING NOTE</span><p>I love working with students—tutoring high-school math and ACT prep, and stepping into K–12 classrooms as a substitute teacher.</p></div>
+      <div class="community-line"><span>ALSO IN THE MIX</span><p>Impactful Relief UIC president · SparkHacks organizer · Break Through Tech AI/ML Fellow · former Arabic TA · Arabic / English / Spanish</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><span class="eyebrow">THAT’S THE NOTE FOR NOW</span><h2>Got a good<br /><em>question?</em></h2></div>
+    <div class="footer-right"><a class="big-mail" href="mailto:zainakhalil002@gmail.com">Let’s talk <span>↗</span></a><a href="https://www.linkedin.com/in/zainakhalil" target="_blank" rel="noreferrer">LinkedIn ↗</a><span class="footer-sign">Zaina Khalil · 2026</span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
