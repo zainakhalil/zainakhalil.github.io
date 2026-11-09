@@ -1,14 +1,15 @@
-# Zaina's Field Notes
+# Zaina Khalil — Portfolio
 
-Static personal website prepared for GitHub Pages at `https://zainakhalil.github.io`.
+My personal website: **[zainakhalil.github.io](https://zainakhalil.github.io)**
 
-## Publish
+A small, interactive portfolio about language, learning, AI, research, projects, and places I’ve been.
 
-1. Create a public GitHub repository named `zainakhalil.github.io`.
-2. Add `index.html`, `style.css`, and `script.js` from this folder to the repository root.
-3. In the repository's **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-4. GitHub Pages will publish the site at `https://zainakhalil.github.io`.
+## Featured work
 
-The profile README draft one folder up links to the site. Put that file in the existing `zainakhalil` profile repository beside your current `header.svg` and `footer.svg` assets.
+- **Brickonaut · NASA Space Apps 2025:** [NASA project page](https://www.spaceappschallenge.org/2025/find-a-team/team-lego/?tab=project) · [GitHub repo](https://github.com/Zona-n/NASA-SPACE-APPS)
+- **Everyday 2.0 · SparkHacks 2025:** [Devpost project](https://devpost.com/software/le-go)
+- **BankTrack · UChicago Data Science for Social Impact:** [Program page](https://datascience.uchicago.edu/outreach/data-science-for-social-impact-network/summer-experience/2024/) · [Project story with a photo of me presenting](https://datascience.uchicago.edu/news/dsi-celebrates-culmination-of-2024-summer-programs/)
 
-The map is drawn in the page itself, with clickable pins, filters, zoom, and panning. It makes no requests to OpenStreetMap or another map-tile service.
+## About the site
+
+The map is an original, self-contained illustration with clickable pins, filters, zoom, and panning. It does not depend on external map tiles. The site is built with plain HTML, CSS, and JavaScript and is published with GitHub Pages.
