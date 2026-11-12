@@ -78,15 +78,31 @@
           <div class="map-caption">A VERY UNOFFICIAL MAP OF GETTING AROUND</div>
         </div>
       </div>
+      <div class="postcards" id="postcards" hidden>
+        <div class="postcards-head"><span class="eyebrow">POSTCARDS FROM THE PINS</span><small>Shot on my phone. Tap one to find it on the map.</small></div>
+        <div class="postcard-track" id="postcard-track"></div>
+      </div>
     </section>
 
     <section class="now-section">
       <div class="now-copy"><span class="eyebrow">02 — RIGHT NOW</span><h2>Researching the space<br />between <em>“helpful”</em> and <em>“I can do it.”</em></h2>
-        <p>I’m studying for my Master of Computer Science in Data Science at UIUC and exploring how learners with different language backgrounds and prior experiences learn introductory programming with AI.</p>
-        <p>I’m also reviewing AI-generated translations of programming examples for a planned bilingual classroom study. Small details—like diacritics or the direction numbers appear—can change how a lesson reads. I’m interested in learning across languages and contexts, not only one language pair.</p>
-        <div class="tag-line"><span>multilingual learning</span><span>human-computer interaction</span><span>applied AI</span></div>
+        <p>I’m studying for my Master of Computer Science in Data Science at UIUC and exploring how learners with different language backgrounds learn introductory programming with AI.</p>
+        <p>This fall I’ve been working with the <a href="https://sites.pitt.edu/~paws/" target="_blank" rel="noreferrer">PAWS Lab</a> at the University of Pittsburgh, reviewing AI-generated Arabic translations of Python worked examples for the lab’s learning tools. Small details, like a missing hamza or where an untranslated code word lands in a right-to-left sentence, change how a lesson reads.</p>
+        <div class="tag-line"><span>multilingual learning</span><span>human-AI collaboration</span><span>computing education</span></div>
       </div>
       <div class="sun-doodle" aria-hidden="true">✳</div>
+      <article class="notebook" aria-label="Current side project">
+        <div class="notebook-head"><span>FIELD NOTEBOOK · NOV 2026</span><span class="notebook-status"><i></i> in progress</span></div>
+        <h3>Which translations need a human?</h3>
+        <p class="notebook-lede">Checking every AI translation with equal care doesn’t scale as more languages get added. I’m testing whether multilingual embeddings can point a reviewer to the English–Arabic pairs most likely to be off, so their attention goes where it’s needed.</p>
+        <ol class="notebook-steps">
+          <li class="done"><b>The spark.</b> A tech review on cross-lingual retrieval for CS 410 at UIUC, plus weeks spent hand-correcting translations.</li>
+          <li><b>Embed &amp; compare.</b> Score each English explanation against its Arabic version with models like multilingual-E5 and BGE-M3.</li>
+          <li><b>Rate by hand.</b> Grade 50–100 pairs on a 1–7 scale and see if a similarity cutoff separates the weak ones.</li>
+          <li><b>Poke at the edges.</b> Do the scores change for pairs I edited? How do embeddings treat diacritics and English code words left inside Arabic text?</li>
+        </ol>
+        <p class="notebook-next"><span>NEXT UP →</span> Asking an LLM to write a worked example from a problem described in Arabic versus English, and seeing what changes.</p>
+      </article>
     </section>
 
     <section class="work-section" id="work">
@@ -149,6 +165,28 @@
       <div class="teaching-note"><span>✎ &nbsp; TEACHING NOTE</span><p>I love working with students—tutoring high-school math and ACT prep, and stepping into K–12 classrooms as a substitute teacher.</p></div>
       <div class="community-line"><span>ALSO IN THE MIX</span><p>Impactful Relief UIC president · SparkHacks organizer · Break Through Tech AI/ML Fellow · former Arabic TA · Arabic / English / Spanish</p></div>
     </section>
+
+    <section class="kitchen-section" id="kitchen" hidden>
+      <div class="section-heading">
+        <div><span class="eyebrow">05 — FROM MY KITCHEN</span><h2>Things I made<br />that <em>didn’t need a GitHub repo.</em></h2></div>
+        <p>Cooking is how I unwind, experiment, and feed the people I love. No recipes were version-controlled in the making of these.</p>
+      </div>
+      <div class="kitchen-grid" id="kitchen-grid"></div>
+    </section>
+
+    <section class="media-section" id="media">
+      <div class="section-heading">
+        <div><span class="eyebrow">06 — ON MY SCREEN &amp; SHELF</span><h2>Opinions, <em>lovingly</em><br />over-rated.</h2></div>
+        <p>Movies, shows, and books I’ve gotten through lately, scored out of five with way too much precision.</p>
+      </div>
+      <div class="media-filters" role="group" aria-label="Filter media">
+        <button class="media-filter active" data-type="all" type="button">Everything</button>
+        <button class="media-filter" data-type="movie" type="button">Movies</button>
+        <button class="media-filter" data-type="show" type="button">Shows</button>
+        <button class="media-filter" data-type="book" type="button">Books</button>
+      </div>
+      <div class="media-list" id="media-list"></div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -156,5 +194,6 @@
     <div class="footer-right"><a class="big-mail" href="mailto:zainakhalil002@gmail.com">Let’s talk <span>↗</span></a><a href="https://www.linkedin.com/in/zainakhalil" target="_blank" rel="noreferrer">LinkedIn ↗</a><span class="footer-sign">Zaina Khalil · 2026</span></div>
   </footer>
   <script src="script.js"></script>
+  <script src="extras.js"></script>
 </body>
 </html>

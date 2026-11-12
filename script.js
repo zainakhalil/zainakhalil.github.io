@@ -1,22 +1,28 @@
+// To add a photo to a place, put the file in photos/ and add:
+//   photos:[{src:'photos/chefchaouen-1.jpg', caption:'Every wall a different blue'}]
+// Places with photos show them in the map callout and the postcard strip.
 const places = [
-  {name:'Cairo', country:'Egypt', note:'Family roots · where the stories begin', kind:'home', lat:30.0444, lng:31.2357, symbol:'✳'},
-  {name:'Chicago', country:'Illinois, USA', note:'UIC · B.S. Data Science', kind:'home', lat:41.8781, lng:-87.6298, symbol:'⌂'},
+  {name:'Cairo', country:'Egypt', note:'Family roots · where the stories begin', kind:'home', lat:30.0444, lng:31.2357, symbol:'✳', photos:[{src:'photos/travel/cairo-1.jpg', caption:'Minarets in Islamic Cairo'},{src:'photos/travel/cairo-2.jpg', caption:'Palms along the Nile'}]},
+  {name:'Chicago', country:'Illinois, USA', note:'UIC · B.S. Data Science', kind:'home', lat:41.8781, lng:-87.6298, symbol:'⌂', photos:[{src:'photos/travel/chicago.jpg', caption:'The lakefront after dark'}]},
   {name:'Urbana-Champaign', country:'Illinois, USA', note:'UIUC · MCS in Data Science', kind:'home', lat:40.1106, lng:-88.2073, symbol:'⌂'},
   {name:'Sohag', country:'Egypt', note:'A little farther south', kind:'trip', lat:26.5591, lng:31.6948},
-  {name:'Istanbul', country:'Türkiye', note:'Between two continents', kind:'trip', lat:41.0082, lng:28.9784},
-  {name:'Tangier', country:'Morocco', note:'North coast', kind:'trip', lat:35.7595, lng:-5.8340},
+  {name:'Giza', country:'Egypt', note:'The pyramids, framed', kind:'trip', lat:29.9937, lng:31.1196, photos:[{src:'photos/travel/giza.jpg', caption:'The pyramids through a window at the Grand Egyptian Museum'}]},
+  {name:'Alexandria', country:'Egypt', note:'The Mediterranean side', kind:'trip', lat:31.2001, lng:29.9187, photos:[{src:'photos/travel/alexandria.jpg', caption:'Boats in the Eastern Harbor'}]},
+  {name:'Port Said', country:'Egypt', note:'Where the Suez Canal meets the sea', kind:'trip', lat:31.2653, lng:32.3019, photos:[{src:'photos/travel/port-said.jpg', caption:'A bright afternoon in Port Said'}]},
+  {name:'Istanbul', country:'Türkiye', note:'Between two continents', kind:'trip', lat:41.0082, lng:28.9784, photos:[{src:'photos/travel/istanbul.jpg', caption:'Ortaköy from the Bosphorus'}]},
+  {name:'Tangier', country:'Morocco', note:'North coast', kind:'trip', lat:35.7595, lng:-5.8340, photos:[{src:'photos/travel/tangier.jpg', caption:'Dessert break in Tangier'}]},
   {name:'Chefchaouen', country:'Morocco', note:'The blue city', kind:'trip', lat:35.1688, lng:-5.2636},
-  {name:'Rabat', country:'Morocco', note:'Capital city', kind:'trip', lat:34.0209, lng:-6.8498},
+  {name:'Rabat', country:'Morocco', note:'Capital city', kind:'trip', lat:34.0209, lng:-6.8498, photos:[{src:'photos/travel/rabat.jpg', caption:'The view from the Kasbah walls'}]},
   {name:'Fes', country:'Morocco', note:'Old medina wanderings', kind:'trip', lat:34.0181, lng:-5.0078},
   {name:'Cancún', country:'Mexico', note:'Yucatán Peninsula', kind:'trip', lat:21.1619, lng:-86.8515},
   {name:'Cabo San Lucas', country:'Mexico', note:'Baja California Sur', kind:'trip', lat:22.8905, lng:-109.9167},
   {name:'La Paz', country:'Mexico', note:'Sea of Cortez', kind:'trip', lat:24.1426, lng:-110.3128},
   {name:'Puerto Vallarta', country:'Mexico', note:'Pacific coast', kind:'trip', lat:20.6534, lng:-105.2253},
-  {name:'Dominican Republic', country:'Caribbean', note:'A Caribbean stop', kind:'trip', lat:18.4861, lng:-69.9312},
-  {name:'Puerto Rico', country:'Caribbean', note:'Island days', kind:'trip', lat:18.4655, lng:-66.1057},
+  {name:'Dominican Republic', country:'Caribbean', note:'A Caribbean stop', kind:'trip', lat:18.4861, lng:-69.9312, photos:[{src:'photos/travel/dr-beach.jpg', caption:'Palms leaning into the wind'},{src:'photos/travel/dr-mountains.jpg', caption:'Green for miles'}]},
+  {name:'Puerto Rico', country:'Caribbean', note:'Island days', kind:'trip', lat:18.4655, lng:-66.1057, photos:[{src:'photos/travel/culebra.jpg', caption:'Culebra, the bluest water I have seen'},{src:'photos/travel/san-juan.jpg', caption:'A rainbow over San Juan'}]},
   {name:'San Diego', country:'California, USA', note:'West coast', kind:'trip', lat:32.7157, lng:-117.1611},
   {name:'Los Angeles', country:'California, USA', note:'West coast', kind:'trip', lat:34.0522, lng:-118.2437},
-  {name:'Dallas', country:'Texas, USA', note:'A Texas stop', kind:'trip', lat:32.7767, lng:-96.7970},
+  {name:'Dallas–Fort Worth', country:'Texas, USA', note:'A Texas stop', kind:'trip', lat:32.7767, lng:-96.7970, photos:[{src:'photos/travel/arlington.jpg', caption:'Match day in Arlington'}]},
   {name:'Ann Arbor', country:'Michigan, USA', note:'A Midwest visit', kind:'trip', lat:42.2808, lng:-83.7430}
 ];
 
@@ -79,7 +85,8 @@ function selectPlace(index, zoom){
   const place=places[index];
   const point=project(place);
   renderPins();renderList();
-  callout.innerHTML=`<span class="callout-kicker">${place.kind==='home'?'HOME BASE':'ON THE MAP'}</span><b>${place.name}</b><small>${place.note} · ${place.country}</small>`;
+  const photo=place.photos&&place.photos[0];
+  callout.innerHTML=`<span class="callout-kicker">${place.kind==='home'?'HOME BASE':'ON THE MAP'}</span><b>${place.name}</b>${photo?`<img src="${photo.src}" alt="${photo.caption||place.name}" loading="lazy" />`:''}<small>${place.note} · ${place.country}</small>`;
   if(zoom){const w=390,h=w/(1000/560);setView({x:Math.max(0,Math.min(1000-w,point.x-w/2)),y:Math.max(0,Math.min(560-h,point.y-h/2)),w,h});}
 }
 
@@ -124,4 +131,21 @@ svg.addEventListener('pointermove',event=>{
 function endDrag(){dragStart=null;svg.classList.remove('dragging')}
 svg.addEventListener('pointerup',endDrag);svg.addEventListener('pointercancel',endDrag);
 
-renderPins();renderList();
+function renderPostcards(){
+  const cards=places.flatMap((p,i)=>(p.photos||[]).map(photo=>({p,i,photo})));
+  const wrap=document.getElementById('postcards');
+  if(!cards.length){wrap.hidden=true;return}
+  wrap.hidden=false;
+  const track=document.getElementById('postcard-track');
+  track.innerHTML=cards.map(({p,i,photo})=>`<button class="postcard" type="button" data-index="${i}"><img src="${photo.src}" alt="${photo.caption||p.name}" loading="lazy" /><b>${p.name}</b><small>${p.country.toUpperCase()}</small>${photo.caption?`<em>${photo.caption}</em>`:''}</button>`).join('');
+  track.querySelectorAll('.postcard').forEach(card=>card.addEventListener('click',()=>{
+    activeFilter='all';
+    document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));
+    selectPlace(Number(card.dataset.index),true);
+    document.getElementById('atlas').scrollIntoView({behavior:'smooth'});
+  }));
+}
+
+const counts={all:places.length,home:places.filter(p=>p.kind==='home').length,trip:places.filter(p=>p.kind==='trip').length};
+document.querySelectorAll('.filter').forEach(b=>{const n=b.querySelector('span');if(n)n.textContent=counts[b.dataset.filter]});
+renderPins();renderList();renderPostcards();
