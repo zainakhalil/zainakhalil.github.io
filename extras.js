@@ -1,7 +1,20 @@
 // ===== ON MY SCREEN & SHELF =====
-// type: 'movie' | 'show' | 'book'. rating: out of 5 (decimals welcome). take: your thoughts (leave '' for now).
+// type: 'movie' | 'show' | 'book'. rating + outOf (defaults to 5). note: optional subtitle.
+// take: your thoughts, as a string or a list of paragraphs. Leave it out and the card just shows the score.
 const media = [
-  {type:'book', title:'The Good Parts', by:'Evann Normandin', rating:3.7, take:''},
+  {type:'book', title:'The Good Parts', by:'Evann Normandin', rating:3.7, outOf:5, take:[
+    "A fresh idea and a genuinely sad book. The writing makes every scene easy to picture, so it reads slowly, almost like you are building the story in your head. It also takes a while to get going, and the pacing made it hard for me to stay hooked. The ending felt realistic but left me unsatisfied.",
+    "David was my favorite character; he brings so much light to the story. Landon and Rose show what love looks like through every kind of heartbreak, and the weight each of them carries from keeping their grief bottled up."
+  ]},
+  {type:'show', title:'One Day', rating:10, outOf:10},
+  {type:'show', title:'Young Sherlock', rating:10, outOf:10},
+  {type:'show', title:'A Series of Unfortunate Events', rating:10, outOf:10},
+  {type:'movie', title:'Five Feet Apart', rating:9.7, outOf:10},
+  {type:'movie', title:'6 Days', note:'Arabic film', rating:9.2, outOf:10},
+  {type:'show', title:'Money Heist', rating:9, outOf:10},
+  {type:'movie', title:'Home Alone', rating:9, outOf:10},
+  {type:'show', title:'His & Hers', rating:8.8, outOf:10},
+  {type:'movie', title:'The Love Hypothesis', rating:4, outOf:5},
 ];
 
 // ===== FROM MY KITCHEN =====
@@ -19,7 +32,6 @@ const dishes = [
   {video:'photos/food/loaf.mp4', poster:'photos/food/loaf-poster.jpg', alt:'Fresh out of the oven'},
   {src:'photos/food/chicken-night.jpg', alt:'Build-your-own night'},
   {src:'photos/food/mango.jpg', alt:'Mango Ninja Creami'},
-  {video:'photos/food/grazing-table.mp4', poster:'photos/food/grazing-table-poster.jpg', alt:'A table of dishes for friends'},
   {src:'photos/food/rice-nuts-2.jpg', alt:'Rice piled with toasted nuts'},
   {src:'photos/food/spread-3.jpg', alt:'Dinner, family-style'},
   {src:'photos/food/spread-4.jpg', alt:'More is more'},
@@ -31,14 +43,18 @@ const typeLabel = {movie:'Movie', show:'Show', book:'Book'};
 function renderMedia(filter='all'){
   const list = document.getElementById('media-list');
   const items = media.filter(m => filter==='all' || m.type===filter);
-  list.innerHTML = items.length ? items.map(m => `
-    <article class="media-card">
-      <div class="media-top"><span class="media-type ${m.type}">${typeLabel[m.type]||m.type}</span>${m.year?`<span>${esc(m.year)}</span>`:''}</div>
+  list.innerHTML = items.length ? items.map(m => {
+    const outOf = m.outOf || 5, perfect = m.rating >= outOf;
+    const takes = m.take ? [].concat(m.take) : [];
+    return `
+    <article class="media-card${perfect?' perfect':''}${takes.join('').length>200?' long':''}">
+      <div class="media-top"><span class="media-type ${m.type}">${typeLabel[m.type]||m.type}</span>${perfect?'<span class="fave">★ perfect score</span>':''}</div>
       <h3>${esc(m.title)}</h3>
-      ${m.by?`<p class="media-by">${m.type==='book'?'by ':''}${esc(m.by)}</p>`:''}
-      <div class="media-score" aria-label="Rated ${m.rating} out of 5"><span class="score-bar"><i style="width:${Math.max(0,Math.min(100,m.rating/5*100))}%"></i></span><span class="score-num">${m.rating}<small> / 5</small></span></div>
-      ${m.take?`<p class="media-take">${esc(m.take)}</p>`:`<p class="media-take pending">Full thoughts coming soon.</p>`}
-    </article>`).join('') : '<p class="media-empty">Nothing here yet. Give me a weekend.</p>';
+      ${m.by||m.note?`<p class="media-by">${m.by?(m.type==='book'?'by ':'')+esc(m.by):esc(m.note)}</p>`:''}
+      <div class="media-score" aria-label="Rated ${m.rating} out of ${outOf}"><span class="score-bar"><i style="width:${Math.max(0,Math.min(100,m.rating/outOf*100))}%"></i></span><span class="score-num">${m.rating}<small> / ${outOf}</small></span></div>
+      ${takes.map(t=>`<p class="media-take">${esc(t)}</p>`).join('')}
+    </article>`;
+  }).join('') : '<p class="media-empty">Nothing here yet. Give me a weekend.</p>';
 }
 
 document.querySelectorAll('.media-filter').forEach(button => button.addEventListener('click', () => {

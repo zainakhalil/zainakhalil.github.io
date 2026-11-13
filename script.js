@@ -6,11 +6,11 @@ const places = [
   {name:'Chicago', country:'Illinois, USA', note:'UIC · B.S. Data Science', kind:'home', lat:41.8781, lng:-87.6298, symbol:'⌂', photos:[{src:'photos/travel/chicago.jpg', caption:'The lakefront after dark'}]},
   {name:'Urbana-Champaign', country:'Illinois, USA', note:'UIUC · MCS in Data Science', kind:'home', lat:40.1106, lng:-88.2073, symbol:'⌂'},
   {name:'Sohag', country:'Egypt', note:'A little farther south', kind:'trip', lat:26.5591, lng:31.6948},
-  {name:'Giza', country:'Egypt', note:'The pyramids, framed', kind:'trip', lat:29.9937, lng:31.1196, photos:[{src:'photos/travel/giza.jpg', caption:'The pyramids through a window at the Grand Egyptian Museum'}]},
+  {name:'Giza', country:'Egypt', note:'The pyramids, framed', kind:'trip', lat:29.9937, lng:31.1196, photos:[{src:'photos/travel/giza.jpg', caption:'Grand Egyptian Museum'}]},
   {name:'Alexandria', country:'Egypt', note:'The Mediterranean side', kind:'trip', lat:31.2001, lng:29.9187, photos:[{src:'photos/travel/alexandria.jpg', caption:'Boats in the Eastern Harbor'}]},
   {name:'Port Said', country:'Egypt', note:'Where the Suez Canal meets the sea', kind:'trip', lat:31.2653, lng:32.3019, photos:[{src:'photos/travel/port-said.jpg', caption:'A bright afternoon in Port Said'}]},
   {name:'Istanbul', country:'Türkiye', note:'Between two continents', kind:'trip', lat:41.0082, lng:28.9784, photos:[{src:'photos/travel/istanbul.jpg', caption:'Ortaköy from the Bosphorus'}]},
-  {name:'Tangier', country:'Morocco', note:'North coast', kind:'trip', lat:35.7595, lng:-5.8340, photos:[{src:'photos/travel/tangier.jpg', caption:'Dessert break in Tangier'}]},
+  {name:'Tangier', country:'Morocco', note:'North coast', kind:'trip', lat:35.7595, lng:-5.8340, photos:[{src:'photos/travel/tangier.jpg', caption:'Dessert break'}]},
   {name:'Chefchaouen', country:'Morocco', note:'The blue city', kind:'trip', lat:35.1688, lng:-5.2636},
   {name:'Rabat', country:'Morocco', note:'Capital city', kind:'trip', lat:34.0209, lng:-6.8498, photos:[{src:'photos/travel/rabat.jpg', caption:'The view from the Kasbah walls'}]},
   {name:'Fes', country:'Morocco', note:'Old medina wanderings', kind:'trip', lat:34.0181, lng:-5.0078},
@@ -22,7 +22,7 @@ const places = [
   {name:'Puerto Rico', country:'Caribbean', note:'Island days', kind:'trip', lat:18.4655, lng:-66.1057, photos:[{src:'photos/travel/culebra.jpg', caption:'Culebra, the bluest water I have seen'},{src:'photos/travel/san-juan.jpg', caption:'A rainbow over San Juan'}]},
   {name:'San Diego', country:'California, USA', note:'West coast', kind:'trip', lat:32.7157, lng:-117.1611},
   {name:'Los Angeles', country:'California, USA', note:'West coast', kind:'trip', lat:34.0522, lng:-118.2437},
-  {name:'Dallas–Fort Worth', country:'Texas, USA', note:'A Texas stop', kind:'trip', lat:32.7767, lng:-96.7970, photos:[{src:'photos/travel/arlington.jpg', caption:'Match day in Arlington'}]},
+  {name:'Dallas–Fort Worth', country:'Texas, USA', note:'A Texas stop', kind:'trip', lat:32.7767, lng:-96.7970, photos:[{src:'photos/travel/arlington.jpg', caption:'World Cup match day'}]},
   {name:'Ann Arbor', country:'Michigan, USA', note:'A Midwest visit', kind:'trip', lat:42.2808, lng:-83.7430}
 ];
 
